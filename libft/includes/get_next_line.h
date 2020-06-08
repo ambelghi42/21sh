@@ -3,26 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ambelghi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hmerieux <hmerieux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/25 21:15:12 by ambelghi          #+#    #+#             */
-/*   Updated: 2019/07/11 01:55:25 by ambelghi         ###   ########.fr       */
+/*   Created: 2020/01/12 18:43:00 by hmerieux          #+#    #+#             */
+/*   Updated: 2020/01/12 18:43:04 by hmerieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# define BUFF_SIZE 5
+# define BUFF_SIZE 1083
 
-# include <fcntl.h>
-# include "libft.h"
+int					get_next_line(const int fd, char **line);
 
-int				get_next_line(const int fd, char **line);
-
-typedef struct	s_gnl
+typedef struct		s_gnl
 {
-	char	*stat_line;
-	int		fd;
-}				t_gnl;
-
+	char			**content;
+	int				num;
+	struct s_gnl	*next;
+}					t_gnl;
 #endif
